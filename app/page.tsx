@@ -4,7 +4,6 @@ import About from "@/components/About";
 import VigilSection from "@/components/VigilSection";
 import MedInsightSection from "@/components/MedInsightSection";
 import Skills from "@/components/Skills";
-import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
         <VigilSection />
         <MedInsightSection />
         <Skills />
-        <Contact />
       </main>
     </>
   );
