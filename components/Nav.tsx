@@ -12,7 +12,6 @@ export default function Nav() {
   }, []);
 
   const links = [
-    { label: "About", href: "#about" },
     { label: "Vigil AI", href: "#vigil" },
     { label: "MedInsight", href: "#medinsight" },
     { label: "Skills", href: "#skills" },
