@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #faf8f5;
+  --bg-card: #ffffff;
+  --bg-subtle: #f3f0eb;
+  --text-primary: #1a1714;
+  --text-secondary: #5c5248;
+  --text-muted: #9c9188;
+  --border: #e5e0d8;
+  --vigil-1: #e63946;
+  --vigil-2: #ff6b6b;
+  --vigil-3: #fff0f0;
+  --med-1: #2a9d8f;
+  --med-2: #52c4b8;
+  --med-3: #edfaf8;
+  --accent-orange: #f4a261;
+  --accent-blue: #457b9d;
+  --accent-purple: #7c5cbf;
+}
+
+* { box-sizing: border-box; padding: 0; margin: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+::selection { background: #e63946; color: white; }
+.font-display { font-family: 'DM Serif Display', serif; }
+.font-mono { font-family: 'DM Mono', monospace; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-subtle); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+.gradient-text-vigil {
+  background: linear-gradient(135deg, #e63946 0%, #f4a261 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-med {
+  background: linear-gradient(135deg, #2a9d8f 0%, #457b9d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delay { animation: float 6s ease-in-out 2s infinite; }
+.animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
