@@ -127,7 +127,7 @@ export default function Hero() {
             maxWidth: "900px",
           }}
         >
-          Building AI that{" "}
+          Anya Rajesh{" "}
           <span
             style={{
               background: "linear-gradient(135deg, #e63946 0%, #f4a261 60%, #2a9d8f 100%)",
@@ -136,7 +136,6 @@ export default function Hero() {
               backgroundClip: "text",
             }}
           >
-            protects
           </span>{" "}
           &{" "}
           <span
@@ -147,7 +146,6 @@ export default function Hero() {
               backgroundClip: "text",
             }}
           >
-            heals.
           </span>
         </h1>
 
@@ -161,10 +159,10 @@ export default function Hero() {
             fontWeight: 400,
           }}
         >
-          I'm <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>Anya Rajesh</strong> — an AI/ML engineer crafting
-          intelligent systems at the intersection of security and healthcare.
-          Creator of <span style={{ color: "var(--vigil-1)", fontWeight: 600 }}>Vigil AI</span> and{" "}
-          <span style={{ color: "var(--med-1)", fontWeight: 600 }}>MedInsight AI</span>.
+          Building and deploying 
+          full-stack AI solutions that integrate real-time data pipelines, retrieval-augmented
+          generation, and privacy-first architectures. Focused on creating impactful,
+          accessible applications that solve real problems.
         </p>
 
         {/* CTA row */}
