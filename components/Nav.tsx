@@ -16,7 +16,6 @@ export default function Nav() {
     { label: "Vigil AI", href: "#vigil" },
     { label: "MedInsight", href: "#medinsight" },
     { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
   ];
 
   return (

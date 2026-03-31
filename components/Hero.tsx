@@ -113,7 +113,7 @@ export default function Hero() {
               display: "inline-block",
             }}
           />
-          Open to opportunities · AI & ML Engineer
+          Open to opportunities · Software & AI Engineering
         </div>
 
         {/* Main heading */}
@@ -137,7 +137,7 @@ export default function Hero() {
             }}
           >
           </span>{" "}
-          &{" "}
+          {" "}
           <span
             style={{
               background: "linear-gradient(135deg, #2a9d8f 0%, #457b9d 100%)",
@@ -185,25 +185,6 @@ export default function Hero() {
             onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(230,57,70,0.3)"; }}
           >
             View Projects
-          </a>
-          <a
-            href="#contact"
-            style={{
-              background: "var(--bg-card)",
-              color: "var(--text-primary)",
-              padding: "0.85rem 2rem",
-              borderRadius: "100px",
-              textDecoration: "none",
-              fontWeight: 600,
-              fontSize: "0.95rem",
-              border: "1px solid var(--border)",
-              transition: "transform 0.2s, border-color 0.2s",
-              display: "inline-block",
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.borderColor = "var(--text-primary)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = "var(--border)"; }}
-          >
-            Get in Touch
           </a>
         </div>
 
