@@ -97,7 +97,7 @@ export const caseStudies: CaseStudy[] = [
     role: "Full-stack and applied AI engineering",
     repository: "https://github.com/anyarajesh1/MedInsight-AI",
     live: null,
-    image: null,
+    image: { src: "/project-case-studies/medinsight-demo-cropped.png", width: 984, height: 1599, alt: "MedInsight AI question and cited medical answer interface" },
     stack: ["React", "FastAPI", "LangChain", "ChromaDB", "Tesseract", "Presidio", "MiniLM"],
     overview: "MedInsight AI helps users explore dense medical documents without treating personal information as ordinary model input. It extracts uploaded PDFs, removes identifiable details, retrieves relevant medical definitions, and returns both simplified and technical explanations.",
     problem: "Lab reports contain unfamiliar terminology alongside highly sensitive personal data. A useful analysis workflow needs to explain the document while protecting identity, grounding responses in medical material, and showing where its information came from.",

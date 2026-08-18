@@ -36,7 +36,7 @@ const projects = [
     signals: ["OCR fallback", "Pre-retrieval PII redaction", "Cited responses", "Local-inference option"],
     stack: ["React", "FastAPI", "LangChain", "ChromaDB", "Tesseract", "Presidio", "MiniLM"],
     repo: "https://github.com/anyarajesh1/MedInsight-AI", live: null, showLiveSlot: false, accent: "lime", icon: ShieldCheck,
-    preview: null,
+    preview: { src: "/project-previews/medinsight.jpg", width: 639, height: 818, alt: "MedInsight AI privacy-first medical document analysis and PDF upload interface" },
   },
 ];
 
