@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import {
-  ArrowUpRight, CheckCircle2, ChevronRight, Code2, Database, FileSearch,
-  Layers3, MapPin, Menu, Network, ShieldCheck, Sparkles, X,
+  ArrowUpRight, BriefcaseBusiness, CheckCircle2, ChevronRight, Code2, Database,
+  FileSearch, Layers3, MapPin, Menu, Network, ShieldCheck, Sparkles, UserRound, X,
 } from "lucide-react";
 
 const projects = [
@@ -42,10 +42,82 @@ const capabilities = [
   { icon: Layers3, title: "Product engineering", text: "TypeScript, React, Next.js, accessible UI, API integration, testing, and deployment." },
 ];
 
+const experiences = [
+  {
+    id: "viatris",
+    company: "Viatris",
+    role: "AI & Emerging Technology Intern",
+    type: "Internship",
+    period: "Jun 2026 — Present",
+    location: "Canonsburg, Pennsylvania · Remote",
+    bullets: [
+      "Engineered AI agents and enterprise automation tools using Microsoft Copilot Studio, REST APIs, SharePoint, and Excel to execute multi-step workflows across internal systems",
+      "Developed full-stack AI prototypes using JavaScript, Python, and SQL databases for conversation auditing, document comparison, governance analysis, and internal data tooling",
+      "Built pseudonymization and synthetic data workflows to protect sensitive information while preserving referential consistency, generating reversible mappings, and validating outputs for enterprise use",
+    ],
+  },
+  {
+    id: "uci",
+    company: "UC Irvine",
+    role: "Machine Learning Research Assistant",
+    type: "Research",
+    period: "May 2026 — Present",
+    location: "Irvine, California · On-site",
+    bullets: [
+      "Conducting machine learning and computer vision research on longitudinal mouse neuron imaging data, supporting the development of multi-session cell registration and tracking pipelines.",
+      "Designing and optimizing neuron-matching algorithms and spatial tracking workflows to improve cross-session cell identification accuracy across large-scale imaging datasets.",
+      "Evaluating model parameters and distance-based matching thresholds, analyzing performance tradeoffs to maximize neuron-matching accuracy while reducing false associations.",
+    ],
+  },
+  {
+    id: "langpal",
+    company: "LangPal",
+    role: "AI/ML Engineer Intern",
+    type: "Internship",
+    period: "Apr 2026 — Jun 2026",
+    location: "Seattle, Washington · Remote",
+    bullets: [
+      "Designing end-to-end machine learning and NLP pipelines for an AI-powered language learning platform, while collaborating closely with the founding team on core product features",
+      "Integrating conversational AI systems, speech recognition models, NLP-driven features, and computer vision components to support personalized and interactive learning experiences",
+      "Managing data preprocessing, model training, evaluation, and optimization, while contributing to the deployment of scalable machine learning models in production environments",
+    ],
+  },
+  {
+    id: "mergeworks",
+    company: "MergeWorks",
+    role: "AI Agent Fellow",
+    type: "Fellowship · Part-time",
+    period: "Feb 2026 — May 2026",
+    location: "Dallas, Texas · Remote",
+    bullets: [
+      "Designing structured Instagram DM conversation architecture to guide prospects from inquiry through qualification and booking",
+      "Developing conditional logic and branching pathways to support treatment matching, objection handling, and personalized response generation",
+      "Engineering human-in-the-loop (HITL) escalation triggers to safely route sensitive or medically complex cases to staff with full conversation context",
+      "Implementing structured qualification frameworks and conversation guardrails to improve consistency, reduce response delays, and support scalable DM-to-booking automation",
+    ],
+  },
+  {
+    id: "alameda",
+    company: "Alameda County ITD",
+    role: "Summer Intern",
+    type: "Internship",
+    period: "Jun 2024 — Aug 2024",
+    location: "United States · Hybrid",
+    bullets: [
+      "Developed Generative AI chatbots using Microsoft Azure and Copilot to provide users with accurate and detailed responses to inquiries regarding Alameda County’s public and internal services",
+      "Implemented chatbot functionality by creating and integrating code to ensure accurate data retrieval from website endpoints, enhancing user experience and reducing manual intervention",
+      "Created and managed datasets used to train models on county-specific data, improving response accuracy across both intranet and internet platforms",
+      "Demonstrated leadership by monitoring development progress within a team of 16 professionals and presenting technical milestones and compliance reports to the CIO and CTO",
+    ],
+  },
+];
+
 export default function Home() {
   const [activeId, setActiveId] = useState("axiom");
+  const [activeExperienceId, setActiveExperienceId] = useState("viatris");
   const [menuOpen, setMenuOpen] = useState(false);
   const project = projects.find((item) => item.id === activeId) ?? projects[0];
+  const experience = experiences.find((item) => item.id === activeExperienceId) ?? experiences[0];
   const ProjectIcon = project.icon;
 
   return (
@@ -55,7 +127,8 @@ export default function Home() {
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
         <div className={`nav-links ${menuOpen ? "open" : ""}`}>
           <a href="#work" onClick={() => setMenuOpen(false)}>Selected work</a>
-          <a href="#systems" onClick={() => setMenuOpen(false)}>Capabilities</a>
+          <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="https://github.com/anyarajesh1" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14} /></a>
         </div>
       </nav>
@@ -63,7 +136,7 @@ export default function Home() {
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <div className="eyebrow"><span className="pulse" /> Available for software + AI roles</div>
-          <h1>I turn fragmented, high-stakes data into <em>trustworthy AI products.</em></h1>
+          <h1>AI Systems <em>Built for the Real World.</em></h1>
           <p className="hero-lede">I’m Anya Rajesh, a full-stack engineer working across retrieval, data pipelines, model orchestration, and product interfaces—especially where trust and clarity matter.</p>
           <div className="hero-actions">
             <a className="button primary" href="#work">Explore the systems <ChevronRight size={16} /></a>
@@ -126,7 +199,54 @@ export default function Home() {
         <div className="capability-grid">{capabilities.map(({ icon: Icon, title, text }, index) => <div className="capability" key={title}><span>0{index + 1}</span><Icon size={22} /><h3>{title}</h3><p>{text}</p></div>)}</div>
       </div></section>
 
-      <footer className="footer shell"><div><Sparkles size={18} /><span>Have a hard information problem?</span><b>Let’s build the system around it.</b></div><a href="https://github.com/anyarajesh1" target="_blank" rel="noreferrer">github.com/anyarajesh1 <ArrowUpRight size={15} /></a></footer>
+      <section className="experience-section shell" id="experience">
+        <div className="section-heading">
+          <div><span className="kicker">EXPERIENCE / 05</span><h2>Building across research and industry.</h2></div>
+          <p>Applied AI work spanning enterprise automation, machine learning research, conversational systems, and public-sector technology.</p>
+        </div>
+
+        <div className="experience-console">
+          <div className="experience-list" role="tablist" aria-label="Professional experience">
+            {experiences.map((item, index) => (
+              <button
+                key={item.id}
+                role="tab"
+                aria-selected={item.id === activeExperienceId}
+                className={item.id === activeExperienceId ? "active" : ""}
+                onClick={() => setActiveExperienceId(item.id)}
+              >
+                <span>0{index + 1}</span>
+                <div><b>{item.company}</b><small>{item.role}</small></div>
+                <ChevronRight size={17} />
+              </button>
+            ))}
+          </div>
+
+          <article className="experience-detail" key={experience.id}>
+            <div className="experience-meta">
+              <div className="experience-mark"><BriefcaseBusiness size={22} /></div>
+              <div><span>{experience.type}</span><h3>{experience.role}</h3><b>{experience.company}</b></div>
+            </div>
+            <div className="experience-dates"><span>{experience.period}</span><span>{experience.location}</span></div>
+            <ul>{experience.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+          </article>
+        </div>
+      </section>
+
+      <section className="contact-section shell" id="contact">
+        <div className="contact-label"><span>06</span><i /><b>CONNECT</b></div>
+        <div className="contact-content">
+          <span className="kicker">OPEN TO SOFTWARE, AI/ML + APPLIED RESEARCH OPPORTUNITIES</span>
+          <h2>Let’s build something <em>useful.</em></h2>
+          <p>Interested in my work or have a technical problem worth solving? I’d love to connect.</p>
+          <div className="contact-actions">
+            <a className="contact-primary" href="https://www.linkedin.com/in/anya-raj/" target="_blank" rel="noreferrer"><UserRound size={20} /> Connect on LinkedIn <ArrowUpRight size={18} /></a>
+            <a href="https://github.com/anyarajesh1" target="_blank" rel="noreferrer"><Code2 size={20} /> Explore GitHub <ArrowUpRight size={18} /></a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer shell"><div><Sparkles size={18} /><span>AI systems built for the real world.</span><b>Anya Rajesh · Full-Stack AI Engineer</b></div><a href="https://www.linkedin.com/in/anya-raj/" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={15} /></a></footer>
     </main>
   );
 }
