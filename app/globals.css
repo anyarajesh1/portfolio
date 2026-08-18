@@ -84,7 +84,7 @@ button { font:inherit; }
 .project-links { display:flex; gap:9px; }
 .project-links a,.project-links .coming-soon { min-height:50px; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 18px; border:1px solid var(--line); border-radius:6px; color:#45514e; background:#fff; font-size:14px; font-weight:800; text-decoration:none; }
 .project-links a:hover { border-color:var(--accent); color:var(--text); transform:translateY(-1px); }
-.project-links a.case-study-link { color:#fff; background:var(--text); border-color:var(--text); }
+.project-links a.case-study-link { min-height:46px; padding:10px 15px; color:#fff; background:var(--text); border-color:var(--text); font-size:13px; }
 .project-links .live-link { color:#fff; background:var(--text); border-color:var(--text); }
 .project-links .coming-soon { color:var(--dim); border-style:dashed; cursor:not-allowed; flex-direction:column; gap:0; line-height:1.15; }
 .project-links .coming-soon small { color:var(--accent); font:10px 'DM Mono',monospace; letter-spacing:.08em; text-transform:uppercase; }

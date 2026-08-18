@@ -176,7 +176,7 @@ export default function Home() {
           <header className="project-header">
             <div className="project-title"><div className="project-icon"><ProjectIcon size={24} /></div><div><span>{project.status}</span><h3>{project.name}</h3></div></div>
             <div className="project-links">
-              <a className="case-study-link" href={`/projects/${project.id}`}>View case study <ArrowUpRight size={17} /></a>
+              <a className="case-study-link" href={`/projects/${project.id}`}>Explore project <ArrowUpRight size={15} /></a>
               <a href={project.repo} target="_blank" rel="noreferrer"><Code2 size={17} /> View GitHub</a>
               {project.live ? (
                 <a className="live-link" href={project.live} target="_blank" rel="noreferrer">Live product <ArrowUpRight size={17} /></a>
