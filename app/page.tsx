@@ -123,17 +123,18 @@ export default function Home() {
   return (
     <main>
       <nav className="nav shell" aria-label="Primary navigation">
-        <a className="wordmark" href="#top" aria-label="Anya Rajesh, home">Anya Rajesh<span>.</span></a>
+        <a className="wordmark" href="#about" aria-label="Anya Rajesh, home">Anya Rajesh<span>.</span></a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
         <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <a href="#work" onClick={() => setMenuOpen(false)}>Selected work</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="#work" onClick={() => setMenuOpen(false)}>Work</a>
           <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="https://github.com/anyarajesh1" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14} /></a>
         </div>
       </nav>
 
-      <section className="hero shell" id="top">
+      <section className="hero shell" id="about">
         <div className="hero-copy">
           <div className="eyebrow"><span className="pulse" /> Available for software + AI roles</div>
           <h1>AI Systems <em>Built for the Real World.</em></h1>
@@ -175,6 +176,7 @@ export default function Home() {
           <header className="project-header">
             <div className="project-title"><div className="project-icon"><ProjectIcon size={24} /></div><div><span>{project.status}</span><h3>{project.name}</h3></div></div>
             <div className="project-links">
+              <a className="case-study-link" href={`/projects/${project.id}`}>View case study <ArrowUpRight size={17} /></a>
               <a href={project.repo} target="_blank" rel="noreferrer"><Code2 size={17} /> View GitHub</a>
               {project.live ? (
                 <a className="live-link" href={project.live} target="_blank" rel="noreferrer">Live product <ArrowUpRight size={17} /></a>
