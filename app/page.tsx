@@ -155,8 +155,8 @@ export default function Home() {
       </section>
 
       <div className="signal-strip" aria-label="Academic and mobility profile"><div className="shell strip-inner">
-        <div className="profile-fact"><span>Class standing</span><b>Senior</b></div>
-        <div className="profile-fact"><span>Degree</span><b>B.S. Computer Science</b></div>
+        <div className="profile-fact"><span>Institution</span><b>UC Irvine</b></div>
+        <div className="profile-fact"><span>Degree</span><b>Senior · B.S. Computer Science</b></div>
         <div className="profile-fact"><span>Specialization</span><b>Artificial Intelligence</b></div>
         <div className="profile-fact"><span>Graduation</span><b>Expected Dec 2027</b></div>
         <div className="profile-fact"><span>Mobility</span><b>Open to relocation</b></div>
