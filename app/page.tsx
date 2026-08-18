@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   ArrowUpRight, BriefcaseBusiness, CheckCircle2, ChevronRight, Code2, Database,
   FileSearch, Layers3, Mail, MapPin, Menu, Network, ShieldCheck, Sparkles, UserRound, X,
@@ -14,7 +15,8 @@ const projects = [
     steps: [["01", "Extract", "Decompose text into atomic claims"], ["02", "Retrieve", "Search local + external evidence"], ["03", "Rank", "Cross-encode for relevance"], ["04", "Verify", "Score entailment + contradiction"], ["05", "Referee", "Return a sourced verdict"]],
     signals: ["LangGraph pipeline", "Hybrid retrieval", "Source-quality gates", "Typed API contracts"],
     stack: ["Next.js", "FastAPI", "LangGraph", "Qdrant", "PostgreSQL", "Hugging Face", "Groq"],
-    repo: "https://github.com/anyarajesh1/Axiom", live: null, showLiveSlot: true, accent: "violet", icon: FileSearch,
+    repo: "https://github.com/anyarajesh1/Axiom", live: "https://axiom-ten-alpha.vercel.app/", showLiveSlot: true, accent: "violet", icon: FileSearch,
+    preview: { src: "/project-previews/axiom.png", width: 2508, height: 1642, alt: "Axiom evidence-led claim analysis interface" },
   },
   {
     id: "vigil", index: "02", name: "Vigil AI", label: "Community safety data", status: "Live product",
@@ -24,6 +26,7 @@ const projects = [
     signals: ["5 public data sources", "No-signup access", "Interactive geospatial UI", "Deployed API + frontend"],
     stack: ["Next.js", "FastAPI", "PostgreSQL", "Leaflet", "Groq / Llama 3", "Vercel", "Render"],
     repo: "https://github.com/anyarajesh1/Vigil-AI", live: "https://vigil-ai-two.vercel.app", showLiveSlot: true, accent: "cyan", icon: MapPin,
+    preview: { src: "/project-previews/vigil.png", width: 3360, height: 1524, alt: "Vigil AI real-time neighborhood safety interface" },
   },
   {
     id: "medinsight", index: "03", name: "MedInsight AI", label: "Private medical RAG", status: "Open source",
@@ -33,6 +36,7 @@ const projects = [
     signals: ["OCR fallback", "Pre-retrieval PII redaction", "Cited responses", "Local-inference option"],
     stack: ["React", "FastAPI", "LangChain", "ChromaDB", "Tesseract", "Presidio", "MiniLM"],
     repo: "https://github.com/anyarajesh1/MedInsight-AI", live: null, showLiveSlot: false, accent: "lime", icon: ShieldCheck,
+    preview: null,
   },
 ];
 
@@ -195,14 +199,20 @@ export default function Home() {
               <div className="content-label">PRODUCT PREVIEW</div>
               <div className="preview-window">
                 <div className="preview-bar"><span /><span /><span /><code>{project.id}.app</code></div>
-                <div className="preview-canvas">
-                  <ProjectIcon size={34} />
-                  <span>INTERFACE PREVIEW</span>
-                  <h4>{project.name}</h4>
-                  <div className="preview-signals">{project.signals.slice(0, 3).map((signal) => <small key={signal}>{signal}</small>)}</div>
-                </div>
+                {project.preview ? (
+                  <div className="preview-image">
+                    <Image src={project.preview.src} width={project.preview.width} height={project.preview.height} alt={project.preview.alt} sizes="(max-width: 760px) 100vw, 45vw" priority={project.id === "axiom"} />
+                  </div>
+                ) : (
+                  <div className="preview-canvas">
+                    <ProjectIcon size={34} />
+                    <span>INTERFACE PREVIEW</span>
+                    <h4>{project.name}</h4>
+                    <div className="preview-signals">{project.signals.slice(0, 3).map((signal) => <small key={signal}>{signal}</small>)}</div>
+                  </div>
+                )}
               </div>
-              <p className="preview-note">Reserved for a product screenshot · Recommended 16:10</p>
+              <p className="preview-note">{project.preview ? `${project.name} · Product interface` : "Reserved for a product screenshot · Recommended 16:10"}</p>
             </div>
           </div>
           <footer className="stack-row"><span>STACK</span><div>{project.stack.map((item) => <code key={item}>{item}</code>)}</div></footer>
