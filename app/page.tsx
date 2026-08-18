@@ -63,7 +63,7 @@ export default function Home() {
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <div className="eyebrow"><span className="pulse" /> Available for software + AI roles</div>
-          <h1>I build AI systems that make complex information <em>usable.</em></h1>
+          <h1>I turn fragmented, high-stakes data into <em>trustworthy AI products.</em></h1>
           <p className="hero-lede">I’m Anya Rajesh, a full-stack engineer working across retrieval, data pipelines, model orchestration, and product interfaces—especially where trust and clarity matter.</p>
           <div className="hero-actions">
             <a className="button primary" href="#work">Explore the systems <ChevronRight size={16} /></a>
@@ -95,7 +95,14 @@ export default function Home() {
         <article className={`project-panel ${project.accent}`} key={project.id}>
           <header className="project-header">
             <div className="project-title"><div className="project-icon"><ProjectIcon size={24} /></div><div><span>{project.status}</span><h3>{project.name}</h3></div></div>
-            <div className="project-links"><a href={project.repo} target="_blank" rel="noreferrer"><Code2 size={15} /> Repository</a>{project.live && <a href={project.live} target="_blank" rel="noreferrer">Live product <ArrowUpRight size={15} /></a>}</div>
+            <div className="project-links">
+              <a href={project.repo} target="_blank" rel="noreferrer"><Code2 size={17} /> View GitHub</a>
+              {project.live ? (
+                <a className="live-link" href={project.live} target="_blank" rel="noreferrer">Live product <ArrowUpRight size={17} /></a>
+              ) : (
+                <span className="coming-soon" aria-label="Live product coming soon">Live product <small>Coming soon</small></span>
+              )}
+            </div>
           </header>
           <div className="project-body">
             <div className="problem-column">
