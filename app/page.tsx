@@ -3,7 +3,7 @@
 import { useState } from "react";
 import {
   ArrowUpRight, BriefcaseBusiness, CheckCircle2, ChevronRight, Code2, Database,
-  FileSearch, Layers3, MapPin, Menu, Network, ShieldCheck, Sparkles, UserRound, X,
+  FileSearch, Layers3, Mail, MapPin, Menu, Network, ShieldCheck, Sparkles, UserRound, X,
 } from "lucide-react";
 
 const projects = [
@@ -14,7 +14,7 @@ const projects = [
     steps: [["01", "Extract", "Decompose text into atomic claims"], ["02", "Retrieve", "Search local + external evidence"], ["03", "Rank", "Cross-encode for relevance"], ["04", "Verify", "Score entailment + contradiction"], ["05", "Referee", "Return a sourced verdict"]],
     signals: ["LangGraph pipeline", "Hybrid retrieval", "Source-quality gates", "Typed API contracts"],
     stack: ["Next.js", "FastAPI", "LangGraph", "Qdrant", "PostgreSQL", "Hugging Face", "Groq"],
-    repo: "https://github.com/anyarajesh1/Axiom", live: null, accent: "violet", icon: FileSearch,
+    repo: "https://github.com/anyarajesh1/Axiom", live: null, showLiveSlot: true, accent: "violet", icon: FileSearch,
   },
   {
     id: "vigil", index: "02", name: "Vigil AI", label: "Community safety data", status: "Live product",
@@ -23,7 +23,7 @@ const projects = [
     steps: [["01", "Locate", "Resolve ZIP code + coordinates"], ["02", "Aggregate", "Query FBI, NOAA + FEMA data"], ["03", "Normalize", "Unify mismatched public schemas"], ["04", "Explain", "Generate accessible safety context"], ["05", "Visualize", "Render a hyperlocal risk view"]],
     signals: ["5 public data sources", "No-signup access", "Interactive geospatial UI", "Deployed API + frontend"],
     stack: ["Next.js", "FastAPI", "PostgreSQL", "Leaflet", "Groq / Llama 3", "Vercel", "Render"],
-    repo: "https://github.com/anyarajesh1/Vigil-AI", live: "https://vigil-ai-two.vercel.app", accent: "cyan", icon: MapPin,
+    repo: "https://github.com/anyarajesh1/Vigil-AI", live: "https://vigil-ai-two.vercel.app", showLiveSlot: true, accent: "cyan", icon: MapPin,
   },
   {
     id: "medinsight", index: "03", name: "MedInsight AI", label: "Private medical RAG", status: "Open source",
@@ -32,7 +32,7 @@ const projects = [
     steps: [["01", "Ingest", "Extract PDF text with OCR fallback"], ["02", "Protect", "Redact PII before processing"], ["03", "Embed", "Index redacted chunks locally"], ["04", "Retrieve", "Ground answers in medical context"], ["05", "Explain", "Return simple or technical views"]],
     signals: ["OCR fallback", "Pre-retrieval PII redaction", "Cited responses", "Local-inference option"],
     stack: ["React", "FastAPI", "LangChain", "ChromaDB", "Tesseract", "Presidio", "MiniLM"],
-    repo: "https://github.com/anyarajesh1/MedInsight-AI", live: null, accent: "lime", icon: ShieldCheck,
+    repo: "https://github.com/anyarajesh1/MedInsight-AI", live: null, showLiveSlot: false, accent: "lime", icon: ShieldCheck,
   },
 ];
 
@@ -123,7 +123,7 @@ export default function Home() {
   return (
     <main>
       <nav className="nav shell" aria-label="Primary navigation">
-        <a className="wordmark" href="#top" aria-label="Anya Rajesh, home">AR<span>/</span>01</a>
+        <a className="wordmark" href="#top" aria-label="Anya Rajesh, home">Anya Rajesh<span>.</span></a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
         <div className={`nav-links ${menuOpen ? "open" : ""}`}>
           <a href="#work" onClick={() => setMenuOpen(false)}>Selected work</a>
@@ -153,7 +153,13 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="signal-strip" aria-label="Core engineering domains"><div className="shell strip-inner"><span>FULL-STACK AI</span><i /><span>RAG + RETRIEVAL</span><i /><span>REAL-TIME DATA</span><i /><span>PRIVACY-FIRST SYSTEMS</span></div></div>
+      <div className="signal-strip" aria-label="Academic and mobility profile"><div className="shell strip-inner">
+        <div className="profile-fact"><span>Class standing</span><b>Senior</b></div>
+        <div className="profile-fact"><span>Degree</span><b>B.S. Computer Science</b></div>
+        <div className="profile-fact"><span>Specialization</span><b>Artificial Intelligence</b></div>
+        <div className="profile-fact"><span>Graduation</span><b>Expected Dec 2027</b></div>
+        <div className="profile-fact"><span>Mobility</span><b>Open to relocation</b></div>
+      </div></div>
 
       <section className="work shell" id="work">
         <div className="section-heading"><div><span className="kicker">SELECTED SYSTEMS / 03</span><h2>Built around a real constraint.</h2></div><p>Each project starts with an information problem, then uses AI only where it improves the system.</p></div>
@@ -172,9 +178,9 @@ export default function Home() {
               <a href={project.repo} target="_blank" rel="noreferrer"><Code2 size={17} /> View GitHub</a>
               {project.live ? (
                 <a className="live-link" href={project.live} target="_blank" rel="noreferrer">Live product <ArrowUpRight size={17} /></a>
-              ) : (
+              ) : project.showLiveSlot ? (
                 <span className="coming-soon" aria-label="Live product coming soon">Live product <small>Coming soon</small></span>
-              )}
+              ) : null}
             </div>
           </header>
           <div className="project-body">
@@ -183,11 +189,18 @@ export default function Home() {
               <div className="content-label top-gap">DESIGNED OUTCOME</div><p className="outcome-copy">{project.outcome}</p>
               <div className="signal-grid">{project.signals.map((signal) => <span key={signal}><CheckCircle2 size={14} />{signal}</span>)}</div>
             </div>
-            <div className="architecture">
-              <div className="content-label">SYSTEM PIPELINE</div>
-              <div className="pipeline">{project.steps.map(([number, title, detail], index) => (
-                <div className="pipeline-row" key={title}><span className="node-number">{number}</span><div><b>{title}</b><small>{detail}</small></div>{index < project.steps.length - 1 && <span className="connector" />}</div>
-              ))}</div>
+            <div className="project-preview">
+              <div className="content-label">PRODUCT PREVIEW</div>
+              <div className="preview-window">
+                <div className="preview-bar"><span /><span /><span /><code>{project.id}.app</code></div>
+                <div className="preview-canvas">
+                  <ProjectIcon size={34} />
+                  <span>INTERFACE PREVIEW</span>
+                  <h4>{project.name}</h4>
+                  <div className="preview-signals">{project.signals.slice(0, 3).map((signal) => <small key={signal}>{signal}</small>)}</div>
+                </div>
+              </div>
+              <p className="preview-note">Reserved for a product screenshot · Recommended 16:10</p>
             </div>
           </div>
           <footer className="stack-row"><span>STACK</span><div>{project.stack.map((item) => <code key={item}>{item}</code>)}</div></footer>
@@ -242,11 +255,12 @@ export default function Home() {
           <div className="contact-actions">
             <a className="contact-primary" href="https://www.linkedin.com/in/anya-raj/" target="_blank" rel="noreferrer"><UserRound size={20} /> Connect on LinkedIn <ArrowUpRight size={18} /></a>
             <a href="https://github.com/anyarajesh1" target="_blank" rel="noreferrer"><Code2 size={20} /> Explore GitHub <ArrowUpRight size={18} /></a>
+            <a href="mailto:anya.rajesh@hotmail.com"><Mail size={20} /> Email me <ArrowUpRight size={18} /></a>
           </div>
         </div>
       </section>
 
-      <footer className="footer shell"><div><Sparkles size={18} /><span>AI systems built for the real world.</span><b>Anya Rajesh · Full-Stack AI Engineer</b></div><a href="https://www.linkedin.com/in/anya-raj/" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={15} /></a></footer>
+      <footer className="footer shell"><div><Sparkles size={18} /><span>AI systems built for the real world.</span><b>Anya Rajesh · Full-Stack AI Engineer</b></div><a href="mailto:anya.rajesh@hotmail.com">anya.rajesh@hotmail.com <ArrowUpRight size={15} /></a></footer>
     </main>
   );
 }
