@@ -76,7 +76,7 @@ export default function Home() {
           <div className="terminal-line"><span>layer</span><strong>frontend → models → data</strong></div>
           <div className="terminal-line"><span>principle</span><strong>evidence over theater</strong></div>
           <div className="system-divider" />
-          <div className="system-status"><CheckCircle2 size={18} /><div><small>CURRENT BUILD</small><b>Axiom / verification pipeline</b></div><span className="live-dot">LIVE</span></div>
+          <div className="system-status"><CheckCircle2 size={18} /><div><small>CURRENT BUILD</small><b>Axiom / verification pipeline</b></div><span className="live-dot">ACTIVE</span></div>
         </div>
       </section>
 
