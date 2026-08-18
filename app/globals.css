@@ -105,6 +105,8 @@ button { font:inherit; }
 .preview-bar code { margin-left:7px; color:var(--dim); font:11px 'DM Mono',monospace; }
 .preview-image { overflow:hidden; background:#f3f1eb; }
 .preview-image img { width:100%; height:auto; display:block; }
+.preview-image.vigil { aspect-ratio:2508/1642; }
+.preview-image.vigil img { height:100%; object-fit:cover; object-position:center; }
 .preview-canvas { min-height:285px; padding:36px; color:var(--accent); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background-image:linear-gradient(color-mix(in srgb,var(--accent) 5%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--accent) 5%,transparent) 1px,transparent 1px); background-size:24px 24px; }
 .preview-canvas>span { margin-top:18px; font:11px 'DM Mono',monospace; letter-spacing:.13em; }
 .preview-canvas h4 { margin-top:5px; color:var(--text); font-size:32px; letter-spacing:-.04em; }

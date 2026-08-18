@@ -200,7 +200,7 @@ export default function Home() {
               <div className="preview-window">
                 <div className="preview-bar"><span /><span /><span /><code>{project.id}.app</code></div>
                 {project.preview ? (
-                  <div className="preview-image">
+                  <div className={`preview-image ${project.id}`}>
                     <Image src={project.preview.src} width={project.preview.width} height={project.preview.height} alt={project.preview.alt} sizes="(max-width: 760px) 100vw, 45vw" priority={project.id === "axiom"} />
                   </div>
                 ) : (
