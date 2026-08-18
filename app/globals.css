@@ -198,8 +198,10 @@ button { font:inherit; }
 .case-meta>div>div { display:flex; flex-wrap:wrap; gap:7px; }
 .case-meta code { padding:6px 8px; border:1px solid var(--line); border-radius:4px; background:#fff; color:var(--muted); font:12px 'DM Mono',monospace; }
 .case-preview { margin-top:65px; overflow:hidden; border:1px solid var(--line); border-radius:10px; background:#fff; box-shadow:0 25px 70px rgba(41,57,52,.1); }
-.case-preview>div:last-child { aspect-ratio:16/7; min-height:400px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background-image:linear-gradient(rgba(23,125,113,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(23,125,113,.04) 1px,transparent 1px); background-size:30px 30px; }
-.case-preview>div:last-child>span { color:var(--cyan); font:12px 'DM Mono',monospace; letter-spacing:.12em; }
+.case-preview-image { background:#f3f1eb; }
+.case-preview-image img { width:100%; height:auto; display:block; }
+.case-preview-placeholder { aspect-ratio:16/7; min-height:400px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background-image:linear-gradient(rgba(23,125,113,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(23,125,113,.04) 1px,transparent 1px); background-size:30px 30px; }
+.case-preview-placeholder>span { color:var(--cyan); font:12px 'DM Mono',monospace; letter-spacing:.12em; }
 .case-preview h2 { margin-top:9px; font-size:clamp(42px,7vw,76px); letter-spacing:-.05em; }
 .case-preview p { color:var(--muted); font-size:17px; margin-top:8px; }
 .case-overview { padding-block:100px; display:grid; grid-template-columns:1fr 1fr; gap:80px; }
@@ -300,7 +302,7 @@ button { font:inherit; }
   .case-meta { grid-template-columns:1fr; }
   .case-meta>div,.case-meta>div:nth-child(2),.case-meta>div:last-child { grid-column:auto; border-right:0; border-bottom:1px solid var(--line); border-top:0; }
   .case-preview { margin-top:45px; }
-  .case-preview>div:last-child { min-height:280px; aspect-ratio:auto; padding:25px; }
+  .case-preview-placeholder { min-height:280px; aspect-ratio:auto; padding:25px; }
   .case-overview,.case-lists { padding-block:75px; grid-template-columns:1fr; gap:55px; }
   .architecture-grid { grid-template-columns:1fr; }
   .architecture-grid article { min-height:auto; border-right:0; padding:24px; }

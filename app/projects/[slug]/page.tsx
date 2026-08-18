@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2 } from "lucide-react";
@@ -42,7 +43,13 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ s
 
       <section className="case-preview shell">
         <div className="preview-bar"><span /><span /><span /><code>{project.slug}.app</code></div>
-        <div><span>PROJECT IMAGE</span><h2>{project.name}</h2><p>Dedicated 16:10 space for the final product screenshot.</p></div>
+        {project.image ? (
+          <div className="case-preview-image">
+            <Image src={project.image.src} width={project.image.width} height={project.image.height} alt={project.image.alt} sizes="(max-width: 1200px) 100vw, 1180px" priority />
+          </div>
+        ) : (
+          <div className="case-preview-placeholder"><span>PROJECT IMAGE</span><h2>{project.name}</h2><p>Dedicated 16:10 space for the final product screenshot.</p></div>
+        )}
       </section>
 
       <section className="case-overview shell">

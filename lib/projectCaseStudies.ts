@@ -7,6 +7,7 @@ export type CaseStudy = {
   role: string;
   repository: string;
   live: string | null;
+  image: { src: string; width: number; height: number; alt: string } | null;
   stack: string[];
   overview: string;
   problem: string;
@@ -25,7 +26,8 @@ export const caseStudies: CaseStudy[] = [
     status: "In active development",
     role: "Full-stack and AI systems engineering",
     repository: "https://github.com/anyarajesh1/Axiom",
-    live: null,
+    live: "https://axiom-ten-alpha.vercel.app/",
+    image: { src: "/project-case-studies/axiom-analysis.png", width: 2486, height: 1896, alt: "Axiom analysis results showing a supported claim, confidence score, and retrieved sources" },
     stack: ["Next.js", "FastAPI", "LangGraph", "Qdrant", "PostgreSQL", "Hugging Face", "Groq"],
     overview: "Axiom is an evidence-led verification platform for general-knowledge claims. Instead of assigning one opaque score to an entire response, it breaks text into atomic claims and exposes the evidence, model signals, and reasoning behind each result.",
     problem: "Generative AI can present unsupported claims with the same confidence as accurate ones. A useful verification system must separate those claims, retrieve relevant material, assess conflicting evidence, and make its reasoning inspectable.",
@@ -60,6 +62,7 @@ export const caseStudies: CaseStudy[] = [
     role: "Full-stack AI engineering",
     repository: "https://github.com/anyarajesh1/Vigil-AI",
     live: "https://vigil-ai-two.vercel.app",
+    image: { src: "/project-case-studies/vigil-map.png", width: 3344, height: 1868, alt: "Vigil AI neighborhood safety dashboard with risk assessment, weather, AI summary, and incident map" },
     stack: ["Next.js", "FastAPI", "PostgreSQL", "Leaflet", "Groq / Llama 3", "Vercel", "Render"],
     overview: "Vigil AI aggregates fragmented public-safety information into a single hyperlocal product. It combines an interactive incident map, current conditions, official emergency declarations, risk scoring, and plain-English AI summaries without requiring an account.",
     problem: "Crime statistics, severe-weather data, and federal emergency declarations live in separate systems with different schemas and levels of readability. Residents need one accessible view that connects those signals to a location they understand.",
@@ -94,6 +97,7 @@ export const caseStudies: CaseStudy[] = [
     role: "Full-stack and applied AI engineering",
     repository: "https://github.com/anyarajesh1/MedInsight-AI",
     live: null,
+    image: null,
     stack: ["React", "FastAPI", "LangChain", "ChromaDB", "Tesseract", "Presidio", "MiniLM"],
     overview: "MedInsight AI helps users explore dense medical documents without treating personal information as ordinary model input. It extracts uploaded PDFs, removes identifiable details, retrieves relevant medical definitions, and returns both simplified and technical explanations.",
     problem: "Lab reports contain unfamiliar terminology alongside highly sensitive personal data. A useful analysis workflow needs to explain the document while protecting identity, grounding responses in medical material, and showing where its information came from.",
