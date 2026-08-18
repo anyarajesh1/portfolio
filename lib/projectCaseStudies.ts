@@ -23,7 +23,7 @@ export const caseStudies: CaseStudy[] = [
     name: "Axiom",
     eyebrow: "Evidence verification · Hybrid retrieval · ML evaluation",
     summary: "A claim-analysis system that decomposes AI-generated text, retrieves relevant evidence, evaluates entailment and contradiction, and returns source-backed verdicts.",
-    status: "In active development",
+    status: "Published",
     role: "Full-stack and AI systems engineering",
     repository: "https://github.com/anyarajesh1/Axiom",
     live: "https://axiom-ten-alpha.vercel.app/",

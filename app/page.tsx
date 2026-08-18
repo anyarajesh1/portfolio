@@ -9,7 +9,7 @@ import {
 
 const projects = [
   {
-    id: "axiom", index: "01", name: "Axiom", label: "Evidence intelligence", status: "In active development",
+    id: "axiom", index: "01", name: "Axiom", label: "Evidence intelligence", status: "Live product",
     problem: "AI answers sound certain even when their claims are unsupported. Axiom turns a block of text into individually testable claims, then shows the evidence behind each verdict.",
     outcome: "A traceable verification workflow—not another opaque confidence score.",
     steps: [["01", "Extract", "Decompose text into atomic claims"], ["02", "Retrieve", "Search local + external evidence"], ["03", "Rank", "Cross-encode for relevance"], ["04", "Verify", "Score entailment + contradiction"], ["05", "Referee", "Return a sourced verdict"]],
@@ -154,7 +154,7 @@ export default function Home() {
           <div className="terminal-line"><span>layer</span><strong>frontend → models → data</strong></div>
           <div className="terminal-line"><span>principle</span><strong>evidence over theater</strong></div>
           <div className="system-divider" />
-          <div className="system-status"><CheckCircle2 size={18} /><div><small>CURRENT BUILD</small><b>Axiom / verification pipeline</b></div><span className="live-dot">ACTIVE</span></div>
+          <div className="system-status"><CheckCircle2 size={18} /><div><small>LIVE PRODUCT</small><b>Axiom / verification pipeline</b></div><span className="live-dot">LIVE</span></div>
         </div>
       </section>
 
